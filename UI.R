@@ -2,11 +2,14 @@
 # load shiny package
 library(shiny)
 library(ggplot2)
+library(markdown)
 # begin shiny UI
 shinyUI(
+ navbarPage("Distribution Manipulator",
+   tabPanel(p(icon("fa fa-th-list"),"Main Menu"),
     pageWithSidebar(
         #Applictaion Title
-        headerPanel("Plotting a Distribution based on User inputs & Calculating Probability for a Range"),
+        headerPanel("Probability Distribution Generation, Plotting & Calculation"),
         sidebarPanel(
             #defining the inputs
             selectInput("distType", label = "distribution type", 
@@ -48,7 +51,12 @@ shinyUI(
                          h5('the calculated probability Pr(lowerrange<x<upperrange):'),
                          verbatimTextOutput("probability"))
                        )
-                )
+                ))),
+   tabPanel(p(icon("fa fa-question-circle"),"Help"),
+                 mainPanel(includeMarkdown("about.md")
+                 )
+        ) # end of "About" tab panel
 )
 )
+
         
