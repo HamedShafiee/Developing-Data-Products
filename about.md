@@ -1,6 +1,7 @@
 ## Probability Distribution Generation, Plotting & Calculation  
 
 This Shiny App does 4 thing:
+
 1- generates 3 types of probability distribution (Normal,Poison,Uniform) based on user provided information.
 
 1-1 for normal distribution:
